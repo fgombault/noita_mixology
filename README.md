@@ -22,6 +22,10 @@ Potions now contain a mix of 1-2 different liquids.
 This mod overrides data/scripts/items/potion.lua, will be
 incompatible with other mods relying on the same file
 
+# Thanks
+
+Many thanks to evaisa for alchemy_lib from which a lot of code was taken
+
 # Changelog
 
 2023-08-05 (v2) now guarantees functional recipes
