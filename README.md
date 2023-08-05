@@ -2,7 +2,7 @@
 
 Variety is the spice of life:
 
-Potions now contain a mix of 1-3 different liquids.
+Potions now contain a mix of 1-2 different liquids. 
 
 (Does not affect starting potions)
 
@@ -21,3 +21,7 @@ Potions now contain a mix of 1-3 different liquids.
 
 This mod overrides data/scripts/items/potion.lua, will be
 incompatible with other mods relying on the same file
+
+# Changelog
+
+2023-08-05 (v2) now guarantees functional recipes
