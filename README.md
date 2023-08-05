@@ -4,6 +4,8 @@ Variety is the spice of life:
 
 Potions now contain a mix of 1-3 different liquids.
 
+(Does not affect starting potions)
+
 # Installation
 
 1. Download the mod: by clicking the "Code" button and downoad as ZIP.
