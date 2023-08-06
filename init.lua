@@ -59,12 +59,9 @@ function GetMaterialReagents()
     -- following is a broken xml file
     -- "mods/more-stuff/data/new/materials_appends.xml",
   }
-  local activeMods = ModGetActiveModIDs()
   for i = 1, #modMaterialsFiles do
-    for j = 1, #activeMods do
-      if (ModIDFromPath(modMaterialsFiles[i]) == activeMods[j]) then
-        AddMaterialsFile(modMaterialsFiles[i])
-      end
+    if ModIsEnabled(modMaterialsFiles[i]) then
+      AddMaterialsFile(modMaterialsFiles[i])
     end
   end
 end
