@@ -46,6 +46,7 @@ function ModIDFromPath(path)
   if (slashIndex and slashIndex > 1) then
     return string.sub(path, 1, slashIndex - 1)
   end
+  return nil
 end
 
 function GetMaterialReagents()
@@ -60,7 +61,8 @@ function GetMaterialReagents()
     -- "more-stuff/data/new/materials_appends.xml",
   }
   for i = 1, #modMaterialsFiles do
-    if ModIsEnabled(ModIDFromPath(modMaterialsFiles[i])) then
+    local mod = ModIDFromPath(modMaterialsFiles[i])
+    if (mod and ModIsEnabled(mod)) then
       AddMaterialsFile("mods/" .. modMaterialsFiles[i])
     end
   end
