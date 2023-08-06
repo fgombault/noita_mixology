@@ -42,27 +42,24 @@ function AddMaterialsFile(materials_file)
 end
 
 function ModIDFromPath(path)
-  if (string.sub(path, 1, 5) ~= "mods/") then
-    return nil
-  end
-  local slashIndex = string.find(path, "/", 6)
-  if (slashIndex and slashIndex > 6) then
-    return string.sub(path, 6, slashIndex - 1)
+  local slashIndex = string.find(path, "/")
+  if (slashIndex and slashIndex > 1) then
+    return string.sub(path, 1, slashIndex - 1)
   end
 end
 
 function GetMaterialReagents()
   AddMaterialsFile("data/materials.xml")
   local modMaterialsFiles = {
-    "mods/alchemical_reactions_expansion/files/materials_append.xml",
-    "mods/grahamsperks/files/materials/materials_reactions.xml",
-    "mods/Hydroxide/files/reactions.xml",
+    "alchemical_reactions_expansion/files/materials_append.xml",
+    "grahamsperks/files/materials/materials_reactions.xml",
+    "Hydroxide/files/reactions.xml",
     -- following is a broken xml file
-    -- "mods/more-stuff/data/new/materials_appends.xml",
+    -- "more-stuff/data/new/materials_appends.xml",
   }
   for i = 1, #modMaterialsFiles do
-    if ModIsEnabled(modMaterialsFiles[i]) then
-      AddMaterialsFile(modMaterialsFiles[i])
+    if ModIsEnabled(ModIDFromPath(modMaterialsFiles[i])) then
+      AddMaterialsFile("mods/" .. modMaterialsFiles[i])
     end
   end
 end
