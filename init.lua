@@ -52,6 +52,7 @@ function GetMaterialReagents()
   AddMaterialsFile("data/materials.xml")
   local modMaterialsFiles = {
     "alchemical_reactions_expansion/files/materials_append.xml",
+    "Apotheosis/files/scripts/materials/custom_materials.xml",
     "grahamsperks/files/materials/materials_reactions.xml",
     "Hydroxide/files/reactions.xml", -- chemical curiosities
     "ir/files/materials_poo.xml",    -- digestive alchemy
