@@ -53,7 +53,8 @@ function GetMaterialReagents()
   local modMaterialsFiles = {
     "alchemical_reactions_expansion/files/materials_append.xml",
     "grahamsperks/files/materials/materials_reactions.xml",
-    "Hydroxide/files/reactions.xml",
+    "Hydroxide/files/reactions.xml", -- chemical curiosities
+    "ir/files/materials_poo.xml",    -- digestive alchemy
     -- following is a broken xml file
     -- "more-stuff/data/new/materials_appends.xml",
   }
