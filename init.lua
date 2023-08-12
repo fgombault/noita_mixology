@@ -34,6 +34,10 @@ function AddMaterialsFile(materials_file)
             MaterialReagents[p2._attr.input_cell1] = {}
           end
           table.insert(MaterialReagents[p2._attr.input_cell1], p2._attr.input_cell2)
+          if (MaterialReagents[p2._attr.input_cell2] == nil) then
+            MaterialReagents[p2._attr.input_cell2] = {}
+          end
+          table.insert(MaterialReagents[p2._attr.input_cell2], p2._attr.input_cell1)
         end
       end
     end
