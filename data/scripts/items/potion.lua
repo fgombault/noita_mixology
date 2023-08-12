@@ -168,11 +168,15 @@ function init(entity_id)
 	-- ░▀░▀░▀▀▀░▀░▀░░░▀▀░░▀▀▀░░░░▀░░▀░▀░▀▀▀░░░▀░▀░▀▀▀░▀░▀░▀▀▀░▀░▀░▀▀▀░░
 
 	local reagentsList = MaterialReagents[potion_material]
-	if (different_liquids == 1 or reagentsList == nil or #reagentsList == 0) then
+	if (reagentsList == nil or #reagentsList == 0) then
+		different_liquids = 1
+		print("sadly, mixology did not find any reagents for " .. potion_material)
+	end
+	if (different_liquids == 1) then
 		AddMaterialInventoryMaterial(entity_id, potion_material, total_capacity)
 	else
-		local reagent = reagentsList[Random(1, #reagentsList)]
 		AddMaterialInventoryMaterial(entity_id, potion_material, total_capacity / 2)
+		local reagent = reagentsList[Random(1, #reagentsList)]
 		AddMaterialInventoryMaterial(entity_id, reagent, total_capacity / 2)
 	end
 end
